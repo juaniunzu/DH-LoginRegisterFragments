@@ -7,27 +7,26 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_welcome);
 
         //creo manager
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         //creo fragment
-        Fragment fragmentFormularioAPegar = new FragmentFormulario();
+        Fragment fragmentWelcomeAPegar = new FragmentWelcome();
 
         //creo transaction
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         //pego fragment
-        fragmentTransaction.replace(R.id.activityMainFragmentContainer, fragmentFormularioAPegar);
+        fragmentTransaction.replace(R.id.activityWelcomeFragmentContainer, fragmentWelcomeAPegar);
 
         //commiteo
         fragmentTransaction.commit();
-
     }
 }
